@@ -1,0 +1,5 @@
+
+Find the kth-shortest path for any two vertex in undirected graph.
+use Dijkstra and A* search algrithms.
+
+Details at http://cyukang.com/2012/09/18/a-start-k-shortest.html
