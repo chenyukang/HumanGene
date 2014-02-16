@@ -40,7 +40,7 @@ void Dijkstra(const Map& map, int id, int* dist) {
     for(int i=0; i<MAX; i++) {
         dist[i] = INF;
     }
-    
+
     dist[id] = 0;
     int u, v, min;
     while(1) {
@@ -119,6 +119,7 @@ int algro(const Map& map, int S, int T, int K) {
             return res[i];
         }
     }
+    return INF;
 }
 
 
@@ -159,7 +160,7 @@ int astar(const Map& map, int S, int T, int K) {
     int* dist = &d_dist[0];
     int max_dist = algro(map, S, T, K);
     int res_count = 0;
-    
+
     if(dist[S] == INF) return -1;
     memset(cnt, 0, sizeof(cnt));
     priority_queue<Path> Q;
@@ -183,7 +184,7 @@ int astar(const Map& map, int S, int T, int K) {
             int v = map[id][i].id;
             if(dist[v] > max_dist)
                 continue;
-            if(now.contains(v)) 
+            if(now.contains(v))
                 continue;
             if(now.trace.size() > 20)
                 continue;
@@ -219,4 +220,5 @@ bool verify_map(const Map& map) {
         }
     }
     std::cout<<"finished verify map"<<std::endl;
+    return true;
 }
