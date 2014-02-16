@@ -32,7 +32,7 @@ void read_data(const char* filename) {
 
     map.resize(MAX);
     ifstream fin(filename, ios::in);
-    if(fin == NULL) {
+    if(fin == 0) {
         cout<<"open file error: "<<filename<<std::endl;
         exit(1);
     }
@@ -67,7 +67,7 @@ void read_ids(const char* filename) {
     string line , s;
 
     ifstream fin(filename, ios::in);
-    if(fin == NULL) {
+    if(fin == 0) {
         cout<<"open file error: "<<filename<<std::endl;
         exit(1);
     }
@@ -118,7 +118,7 @@ int main(int argc, const char** argv){
     verify_map(map);
     read_ids(pairs_file);
     run_pairs(map, ids);
-    
+
 #if 0
     time_t begin, end;
     begin = time(NULL);
@@ -132,7 +132,7 @@ int main(int argc, const char** argv){
     printf("cost time: %d\n", end - begin);
 #endif
 
-#if 0    
+#if 0
     begin = time(NULL);
     astar(map, 77, 3736);
     end = time(NULL);
@@ -146,7 +146,7 @@ int main(int argc, const char** argv){
     printf("cost time: %d\n", end - begin);
 #endif
 
-    
+
 #if 0
     int path[9] = {1, 46, 158, 3617, 761, 115, 148, 484, 2};
 
@@ -189,7 +189,7 @@ int main(int argc, const char** argv){
     a = b;
     a.show();
 #endif
-
+    return 0;
     //show_map();
 
 }
